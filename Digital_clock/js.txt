@@ -1,0 +1,15 @@
+const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+const updateTime=()=>{
+  const curr= new Date();
+  const day=weekday[curr.getDay().toString()];
+  const hr=curr.getHours().toString().padStart(2,"0");
+  const min=curr.getMinutes().toString().padStart(2,"0");
+  const sec=curr.getSeconds().toString().padStart(2,"0");
+  
+  const setDay=`${day}`;
+ const setTime=`${hr}:${min}:${sec}`; 
+ document.getElementById('day').textContent=setDay; document.getElementById('clock1').textContent=setTime;
+}
+setInterval(updateTime,1000);
+updateTime();
